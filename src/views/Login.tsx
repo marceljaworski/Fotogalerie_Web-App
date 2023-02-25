@@ -1,21 +1,28 @@
 import { useState } from 'react';
 import { login } from "../library/api";
+type Email = any
+type Password = any
 
-const inicialValues = {
+type Values = {
+  email: Email,
+  password: Password,
+}
+
+const inicialValues: Values = {
   email: "",
   password: ""
 };
 function Login() {
 
   const [values, setValues] = useState(inicialValues);
-  const handleInput = (event) => {
+  const handleInput = (event:any) => {
       event.preventDefault();
     setValues({
       ...values,
       [event.target.name]: event.target.value,
     });
   };
-  const handlePost = (event) => {
+  const handlePost = (event:any): void => {
     event.preventDefault();
     console.log(values)
     login(values.email, values.password);

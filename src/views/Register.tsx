@@ -1,8 +1,14 @@
-import React from 'react';
 import {useState} from "react"
 import { register } from "../library/api"
+type Email = any
+type Password = any
 
-const inicialValues = {
+type Values = {
+  email: Email,
+  password: Password,
+  password2: Password
+}
+const inicialValues : Values = {
     email: "",
     password: "",
     password2: "",
@@ -11,14 +17,14 @@ const inicialValues = {
 function Register() {
     const [values, setValues] = useState(inicialValues);
   
-  const handleInput = (event) => { 
+  const handleInput = (event:any) => { 
       event.preventDefault();
     setValues({
       ...values,
       [event.target.name]: event.target.value,
     });
   };
-  const handlePost = (event) => {
+  const handlePost = (event:any) => {
     event.preventDefault();
     const newUser = values;
     if (newUser.password !== newUser.password2){

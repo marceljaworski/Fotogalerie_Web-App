@@ -1,4 +1,4 @@
-const URL = "http://localhost:4003/user/";
+const URL = "http://localhost:4001/api/photographer/";
 export const register = (email:"string", password: "string") => {
 
     try{

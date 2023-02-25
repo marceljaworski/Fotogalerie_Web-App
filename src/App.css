@@ -1,0 +1,17 @@
+:root {
+  /* Color Theme Variavbles Swatches in Hex */
+  --black: #011F26;
+  --dark: #3B3936;
+  --red: #BD2A2E;
+  --yellow: #F2A71B;
+  --blue: #025E73;
+  --steel: #A5A692;
+  --grey:  #BFB78F;
+}
+
+body { 
+  background-color: var(--dark)
+}
+h1{
+  color: var(--grey);
+}

@@ -36,7 +36,7 @@ function Register() {
   };
   
   return (
-    <div>
+    <body>
          <h1>Register</h1>
       <form>
         <input type="email" placeholder="E-Mail-Adresse" onChange={handleInput} value={values.email} name="email" />
@@ -44,7 +44,7 @@ function Register() {
         <input type="password" placeholder="confirm your password" onChange={handleInput} value={values.password2} name="password2" />
         <button onClick={handlePost} type="submit">Register</button>
       </form>
-    </div>
+    </body>
   )
 }
 

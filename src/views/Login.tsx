@@ -24,12 +24,11 @@ function Login() {
   };
   const handlePost = (event:any): void => {
     event.preventDefault();
-    console.log(values)
     login(values.email, values.password);
     setValues(inicialValues);
   };
   return (
-    <div>
+    <body>
       
       <h1>Login</h1>
       <form>
@@ -37,7 +36,7 @@ function Login() {
         <input type="password" placeholder="password" onChange={handleInput} value={values.password} name="password" />
         <button onClick={handlePost} type="submit">Register</button>
       </form>
-    </div>
+    </body>
   );
 };
 

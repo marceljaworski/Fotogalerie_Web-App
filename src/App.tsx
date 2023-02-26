@@ -5,7 +5,6 @@ import Home from "./views/Home";
 import Albums from "./views/Albums";
 import Login from "./views/Login";
 import Register from "./views/Register";
-import Contact from "./views/Contact";
 import NoPage from "./views/NoPage";
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
           <Route path="albums" element={<Albums />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

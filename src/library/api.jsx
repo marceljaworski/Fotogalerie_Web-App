@@ -1,8 +1,9 @@
-const URL = "http://localhost:4001/api/photographer";
-export const register = (email:"string", password: "string") => {
+const URL = "http://localhost:4001/api";
 
+export const register = (email, password) => {
+    
     try{
-        fetch(`${URL}`,{
+        fetch(`${URL}/photographer`,{
                 method: 'POST',
                 headers: {"content-Type": "application/json"},
                 credentials: "include",
@@ -23,10 +24,10 @@ export const register = (email:"string", password: "string") => {
         console.error(error)
     }
 };
-export const login = (email:"string", password:"string") => {
+export const login = (email, password) => {
 
     try{
-        fetch(`${URL}/login`,{
+        fetch(`${URL}/photographer/login`,{
                 method: 'POST',
                 credentials: 'include',
                 headers: {"content-Type": "application/json"},
@@ -50,3 +51,4 @@ export const login = (email:"string", password:"string") => {
 };
 
 
+ 

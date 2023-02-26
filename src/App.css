@@ -11,7 +11,9 @@
 }
 
 body { 
-  background-color: var(--dark)
+  background-color: var(--dark);
+  color: var(--steel);
+  margin: auto;
 }
 h1{
   color: var(--steel);
@@ -20,6 +22,28 @@ h1{
 .card {
   height: 100px;
 }
-nav ul {
-  list-style-type: none;
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid var(--red);
+}
+input:focus {
+  border: 3px solid #555;
+}
+button {
+  width: 300px;
+  background-color: var(--blue);
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }

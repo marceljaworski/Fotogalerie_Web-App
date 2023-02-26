@@ -1,6 +1,6 @@
 const URL = "http://localhost:4001/api";
 
-export const register = (email, password) => {
+export const signup = (email, password) => {
     
     try{
         fetch(`${URL}/photographer`,{

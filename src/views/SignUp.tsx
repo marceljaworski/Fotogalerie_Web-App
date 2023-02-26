@@ -1,5 +1,5 @@
 import {useState} from "react"
-import { register } from "../library/api"
+import { signup } from "../library/api"
 type Email = any
 type Password = any
 
@@ -14,7 +14,7 @@ const inicialValues : Values = {
     password2: "",
 }
 
-function Register() {
+function SignUp() {
     const [values, setValues] = useState(inicialValues);
   
   const handleInput = (event:any) => { 
@@ -30,22 +30,24 @@ function Register() {
     if (newUser.password !== newUser.password2){
       console.error("password don't match")
     }else{
-      register(values.email, values.password);
+      signup(values.email, values.password);
       setValues(inicialValues);
     }
   };
   
   return (
-    <body>
-         <h1>Register</h1>
+    <div>
+         <h1>SignUp</h1>
       <form>
+        <label htmlFor="email"><b>Email</b></label>
         <input type="email" placeholder="E-Mail-Adresse" onChange={handleInput} value={values.email} name="email" />
+        <label htmlFor="email"><b>Password</b></label>
         <input type="password" placeholder="password" onChange={handleInput} value={values.password} name="password" />
         <input type="password" placeholder="confirm your password" onChange={handleInput} value={values.password2} name="password2" />
-        <button onClick={handlePost} type="submit">Register</button>
+        <button onClick={handlePost} type="submit">SignUp</button>
       </form>
-    </body>
+    </div>
   )
 }
 
-export default Register
+export default SignUp

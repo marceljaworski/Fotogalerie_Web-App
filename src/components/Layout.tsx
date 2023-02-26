@@ -13,10 +13,10 @@ const Layout = () => {
             <NavLink to="/albums" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Albums</NavLink>
           </li>
           <li>
-            <NavLink to="/register" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Register</NavLink>
+            <NavLink to="/signup" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Sign Up</NavLink>
           </li>
           <li>
-            <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Login</NavLink>
+            <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Log In</NavLink>
           </li>
         </ul>
         <ul className="icon-menu">

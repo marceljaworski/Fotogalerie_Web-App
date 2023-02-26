@@ -28,15 +28,17 @@ function Login() {
     setValues(inicialValues);
   };
   return (
-    <body>
+    <div>
       
       <h1>Login</h1>
       <form>
+        <label htmlFor="email"><b>Email</b></label>
         <input type="email" placeholder="E-Mail-Adresse" onChange={handleInput} value={values.email} name="email" />
+        <label htmlFor="email"><b>Password</b></label>
         <input type="password" placeholder="password" onChange={handleInput} value={values.password} name="password" />
         <button onClick={handlePost} type="submit">Register</button>
       </form>
-    </body>
+    </div>
   );
 };
 

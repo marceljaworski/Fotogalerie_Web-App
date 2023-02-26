@@ -21,7 +21,7 @@ export const fotos = [
 function Home() {
   
   return (
-    <body>
+    <div>
       <h1>My Foto Album</h1>
       <div className='card'>
         <img src={fotos[0].url} alt="" />
@@ -30,7 +30,7 @@ function Home() {
       </div>
 
 
-    </body>
+    </div>
   );
 };
 

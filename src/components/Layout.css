@@ -1,3 +1,4 @@
+
 .menu  {
   list-style-type: none;
   margin: 0;
@@ -9,9 +10,11 @@
 
 .menu li {
   float: left;
+ 
 }
 
 .menu li a {
+
   display: block;
   color: white;
   text-align: center;
@@ -30,4 +33,7 @@
 .active {
   background-color: var(--red);
   
+}
+.grow {
+  flex-grow: 2;
 }

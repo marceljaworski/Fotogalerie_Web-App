@@ -23,11 +23,13 @@ h1{
   height: 100px;
 }
 form {
+  width: 300px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 input {
-  width: 300px;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -38,7 +40,6 @@ input:focus {
   border: 3px solid #555;
 }
 button {
-  width: 300px;
   background-color: var(--blue);
   border: none;
   color: white;

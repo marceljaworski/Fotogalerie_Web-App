@@ -18,9 +18,9 @@ const Layout = () => {
           <li>
             <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Log In</NavLink>
           </li>
-        </ul>
-        <ul className="icon-menu">
-        
+          <li className="grow"></li>
+          <li>LikedIn</li>
+          <li>GitHub</li>
         </ul>
       </nav>
 

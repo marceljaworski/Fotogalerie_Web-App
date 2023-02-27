@@ -1,6 +1,6 @@
 const URL = "http://localhost:4001/api";
 
-export const signup = (email, password) => {
+export const signup = (email:string , password: string) :void => {
     
     try{
         fetch(`${URL}/photographer`,{
@@ -24,7 +24,7 @@ export const signup = (email, password) => {
         console.error(error)
     }
 };
-export const login = (email, password) => {
+export const login = (email:string, password:string) :void => {
 
     try{
         fetch(`${URL}/photographer/login`,{
@@ -38,7 +38,7 @@ export const login = (email, password) => {
             })
                 .then((response) => {
                     if (response.status === 201) {
-                        console.log("Welkome!")
+                        console.log("Welcome!")
                         return response.json();
                     }
                     if (response.status === 401) {

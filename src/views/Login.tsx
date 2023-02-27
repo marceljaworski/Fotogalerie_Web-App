@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { login } from "../library/api";
-type Email = any
-type Password = any
+type Email = string
+type Password = string
 
 type Values = {
   email: Email,
@@ -15,14 +15,14 @@ const inicialValues: Values = {
 function Login() {
 
   const [values, setValues] = useState(inicialValues);
-  const handleInput = (event:any) => {
+  const handleInput = (event:React.ChangeEvent<HTMLInputElement>):void => {
       event.preventDefault();
     setValues({
       ...values,
       [event.target.name]: event.target.value,
     });
   };
-  const handlePost = (event:any): void => {
+  const handlePost = (event:any):void => {
     event.preventDefault();
     login(values.email, values.password);
     setValues(inicialValues);
@@ -34,7 +34,7 @@ function Login() {
       <form>
         <label htmlFor="email"><b>Email</b></label>
         <input type="email" placeholder="E-Mail-Adresse" onChange={handleInput} value={values.email} name="email" />
-        <label htmlFor="email"><b>Password</b></label>
+        <label htmlFor="password"><b>Password</b></label>
         <input type="password" placeholder="password" onChange={handleInput} value={values.password} name="password" />
         <button onClick={handlePost} type="submit">Register</button>
       </form>

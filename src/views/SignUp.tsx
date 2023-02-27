@@ -14,6 +14,7 @@ const inicialValues : Values = {
     password2: "",
 }
 
+
 function SignUp() {
     const [values, setValues] = useState(inicialValues);
   

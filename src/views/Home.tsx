@@ -1,6 +1,16 @@
 import React from 'react'
 // import fotos from "..library/api";
-export const fotos = [
+interface Foto {
+  id : string;
+  title: string;
+  artist: string;
+  year: number;
+  url: string;
+  price: number;
+
+}
+
+export const fotos : Array<Foto> = [
   {
       id: "esfse234056520w3wsdmdobht",
       title: "Where the Light is",

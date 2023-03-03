@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { login } from "../library/api";
+// import { Helmet } from "react-helmet";
 type Email = string
 type Password = string
 
@@ -12,6 +13,7 @@ const inicialValues: Values = {
   email: "",
   password: ""
 };
+
 function Login() {
 
   const [values, setValues] = useState(inicialValues);
@@ -22,13 +24,16 @@ function Login() {
       [event.target.name]: event.target.value,
     });
   };
-  const handlePost = (event:any):void => {
+  const handlePost = (event:React.MouseEvent<HTMLButtonElement, MouseEvent>):void => {
     event.preventDefault();
     login(values.email, values.password);
     setValues(inicialValues);
   };
   return (
     <div>
+      {/* <Helmet>
+        <title>-login</title>
+      </Helmet> */}
       
       <h1>Login</h1>
       <form>
@@ -36,7 +41,7 @@ function Login() {
         <input type="email" placeholder="E-Mail-Adresse" onChange={handleInput} value={values.email} name="email" />
         <label htmlFor="password"><b>Password</b></label>
         <input type="password" placeholder="password" onChange={handleInput} value={values.password} name="password" />
-        <button onClick={handlePost} type="submit">Register</button>
+        <button onClick={(e)=> handlePost(e)} type="submit">Log In</button>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
 import { getAll } from "../library/api";
-import  Photocard  from "../components/Photocard.tsx"
+import  Photocard  from "../components/Photocard"
 interface Photo {
   id : string;
   title: string;

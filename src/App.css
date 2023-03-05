@@ -20,9 +20,7 @@ h1{
   color: var(--steel);
   text-align: center;
 }
-.card {
-  height: 100px;
-}
+
 form {
   width: 300px;
   padding: 1rem;
@@ -56,18 +54,18 @@ button {
 
 }
 .home-galerie__container{
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 
 }
 @media screen and (max-width: 768px) { 
   .home-galerie__container{
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 }

@@ -18,14 +18,15 @@ function Home() {
 
   
   return (
-    <div>
+    <main className='home-main__container'>
       <h1>My Foto Album</h1>
-      {photos.map((el, i) => (
-        <Photocard key={i} image={el}/>
-      ))}
+      <div className='home-galerie__container'>
+        {photos.map((el, i) => (
+          <Photocard key={i} image={el}/>
+        ))}
+      </div>
 
-
-    </div>
+    </main>
   );
 };
 

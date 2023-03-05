@@ -49,3 +49,25 @@ button {
   margin: 4px 2px;
   cursor: pointer;
 }
+.home-main__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.home-galerie__container{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+
+}
+@media screen and (max-width: 768px) { 
+  .home-galerie__container{
+      flex-direction: column;
+      align-items: center;
+  }
+}

@@ -1,5 +1,20 @@
-const URL = "http://localhost:4001/api";
+const URL:string = "http://localhost:4001/api";
 
+
+export const getAll = async (path:string) => {
+    try {
+      let urlGetAll = `${URL}/${path}`;
+  
+      const response = await fetch(urlGetAll);
+      const data = await response.json();
+  
+      return data;
+    } catch (error) {
+      console.error(error);
+      return;
+    }
+};
+  
 export const signup = (email:string , password: string) :void => {
     
     try{

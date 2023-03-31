@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import { login } from "../library/api";
-// import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+import Cookies from 'js-cookie';
+
+
 type Email = string
 type Password = string
 
@@ -16,7 +19,9 @@ const inicialValues: Values = {
 
 function Login() {
 
+  const [loggedInUser, setLoggedInUser] = useState("")
   const [values, setValues] = useState(inicialValues);
+  console.log(values)
   const handleInput = (event:React.ChangeEvent<HTMLInputElement>):void => {
       event.preventDefault();
     setValues({
@@ -28,7 +33,20 @@ function Login() {
     event.preventDefault();
     login(values.email, values.password);
     setValues(inicialValues);
+    
+    // navigate("/")
   };
+  // const navigate = useNavigate()
+
+  useEffect(()=> {
+      const loggedInCookie = Cookies.get("loggedIn")
+      if(loggedInCookie)
+          setLoggedInUser(loggedInCookie)
+        }, [])
+  // useEffect(()=>{
+  //   if(loggedInUser) navigate("/")
+  // }, [setLoggedInUser])
+        
   return (
     <div>
       {/* <Helmet>
@@ -43,6 +61,7 @@ function Login() {
         <input type="password" placeholder="password" onChange={handleInput} value={values.password} name="password" />
         <button onClick={(e)=> handlePost(e)} type="submit">Log In</button>
       </form>
+      <Link to="/signup">No account yet? Join Now</Link>
     </div>
   );
 };

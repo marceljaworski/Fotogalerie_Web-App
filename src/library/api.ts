@@ -1,4 +1,5 @@
 const URL:string = "http://localhost:4001/api";
+// import { useNavigate } from "react-router-dom";
 
 
 export const getAll = async (path:string) => {
@@ -14,56 +15,60 @@ export const getAll = async (path:string) => {
       return;
     }
 };
-  
+
 export const signup = (email:string , password: string) :void => {
     
     try{
         fetch(`${URL}/photographer`,{
-                method: 'POST',
-                headers: {"content-Type": "application/json"},
-                credentials: "include",
-                body: JSON.stringify({
-                    email : email,
-                    password: password
-                    }) 
-            })
-                .then((response) => {
-                    if (response.status === 201) {
-                        return response.json();
-                    }
-                    if (response.status !== 201) {
-                        console.error("unsuccessful post");
-                    } 
-                })
+            method: 'POST',
+            headers: {"content-Type": "application/json"},
+            credentials: "include",
+            body: JSON.stringify({
+                email : email,
+                password: password
+            }) 
+        })
+        .then((response) => {
+            if (response.status === 201) {     
+                console.log("Successful registration")
+                return response.json();
+            }
+            if (response.status !== 201) { 
+                console.error("failed post");
+            } 
+    
+        })
     }catch(error){
         console.error(error)
     }
 };
 export const login = (email:string, password:string) :void => {
-
+            
+    // const navigate = useNavigate()
     try{
         fetch(`${URL}/photographer/login`,{
-                method: 'POST',
-                credentials: 'include',
-                headers: {"content-Type": "application/json"},
-                body: JSON.stringify({
-                    email : email,
-                    password: password
-                    }) 
-            })
-                .then((response) => {
-                    if (response.status === 201) {
-                        console.log("Welcome!")
-                        return response.json();
-                    }
-                    if (response.status === 401) {
-                        console.error("Unauthorized");
-                    } 
-                })
+        method: 'POST',
+        credentials: 'include',
+        headers: {"content-Type": "application/json"},
+        body: JSON.stringify({
+            email : email,
+            password: password
+            }) 
+        })
+        .then((response) => {
+            if (response.status === 201) {
+                console.log("Welcome!")
+                response.json();
+                // navigate("/");
+                return 
+            }
+            if (response.status === 401) {
+                console.error("Unauthorized");
+            } 
+        })
     }catch(error){
         console.error(error)
     }
-};
-
+}
 
  

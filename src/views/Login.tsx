@@ -1,6 +1,6 @@
 import { useState, useEffect  } from 'react';
 import { login } from "../library/api";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from 'js-cookie';
 
 
@@ -19,9 +19,14 @@ const inicialValues: Values = {
 
 function Login() {
 
-  const [loggedInUser, setLoggedInUser] = useState("")
   const [values, setValues] = useState(inicialValues);
-  console.log(values)
+  const navigate = useNavigate()
+  const loggedInCookie = Cookies.get("loggedIn")
+  useEffect(()=> {
+    if(loggedInCookie)
+      navigate("/")
+  })
+    
   const handleInput = (event:React.ChangeEvent<HTMLInputElement>):void => {
       event.preventDefault();
     setValues({
@@ -33,20 +38,8 @@ function Login() {
     event.preventDefault();
     login(values.email, values.password);
     setValues(inicialValues);
-    
-    // navigate("/")
   };
-  // const navigate = useNavigate()
-
-  useEffect(()=> {
-      const loggedInCookie = Cookies.get("loggedIn")
-      if(loggedInCookie)
-          setLoggedInUser(loggedInCookie)
-        }, [])
-  // useEffect(()=>{
-  //   if(loggedInUser) navigate("/")
-  // }, [setLoggedInUser])
-        
+      
   return (
     <div>
       {/* <Helmet>

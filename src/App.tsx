@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import Albums from "./views/Albums";
 import Login from "./views/Login";
 import SignUp from "./views/SignUp";
+import Upload from './views/Upload';
 import NoPage from "./views/NoPage";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="albums" element={<Albums />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
+          <Route path="upload" element={<Upload />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

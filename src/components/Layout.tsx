@@ -24,7 +24,7 @@ const Layout = () => {
           </li>
           <li className="grow"></li>
           <li>
-          <NavLink to="/login" className={({ isActive }) => (isActive ? 'active' : 'inactive')}><AddAPhotoIcon></AddAPhotoIcon></NavLink>
+          <NavLink to="/upload" className={({ isActive }) => (isActive ? 'active' : 'inactive')}><AddAPhotoIcon></AddAPhotoIcon></NavLink>
           </li>
           <li>
             <NavLink to="https://github.com/marceljaworski" className={({ isActive }) => (isActive ? 'active' : 'inactive')}><GitHubIcon></GitHubIcon></NavLink>
